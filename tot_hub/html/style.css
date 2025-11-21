@@ -1,0 +1,218 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+    overflow: hidden;
+}
+
+/* Blur katmanı */
+#blur-layer {
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(12px);
+    background: radial-gradient(circle at top, rgba(0,0,0,0.55), rgba(0,0,0,0.85));
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease-out;
+    z-index: 5;
+}
+
+/* Ana wrapper */
+#hub-wrapper {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+}
+
+#hub-wrapper.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#hub-wrapper.visible #blur-layer {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Kart */
+.hub-card {
+    width: 820px;
+    max-width: 90vw;
+    background: rgba(10, 14, 25, 0.92);
+    border-radius: 20px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 20px 26px 18px;
+    transform: translateY(10px);
+    animation: floatIn 0.25s ease-out forwards;
+}
+
+/* Header */
+.hub-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.hub-title {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.hub-brand {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    font-size: 14px;
+}
+
+.hub-section {
+    color: #4bc9ff;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.icon-btn {
+    border: none;
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    border-radius: 999px;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.15s ease-out, transform 0.1s ease-out;
+}
+
+.icon-btn:hover {
+    background: rgba(255,255,255,0.16);
+    transform: translateY(-1px);
+}
+
+/* Tabs */
+.hub-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.tab {
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: none;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    background: transparent;
+    color: #7f8aa4;
+}
+
+.tab.active {
+    background: rgba(75, 201, 255, 0.15);
+    color: #e8f6ff;
+}
+
+.tab.disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+/* Body */
+.hub-body {
+    padding-top: 4px;
+}
+
+.hub-info {
+    color: #c3d4ff;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+/* Mode Cards */
+.mode-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.mode-card {
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.05);
+    background: radial-gradient(circle at top left, rgba(75,201,255,0.12), rgba(15,18,34,0.95));
+    padding: 14px 14px 12px;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, border-color 0.12s ease-out;
+    color: #e9f1ff;
+}
+
+.mode-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.65);
+    border-color: rgba(75,201,255,0.6);
+}
+
+.mode-card.active {
+    border-color: #4bc9ff;
+    box-shadow: 0 0 0 1px rgba(75,201,255,0.7);
+}
+
+.mode-label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.mode-desc {
+    font-size: 12px;
+    color: #9fb0d8;
+}
+
+/* Footer */
+.hub-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: #7f8aa4;
+}
+
+#current-mode-label {
+    color: #e8f6ff;
+}
+
+.hint {
+    opacity: 0.8;
+}
+
+/* Utils */
+.hidden {
+    display: none;
+}
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
