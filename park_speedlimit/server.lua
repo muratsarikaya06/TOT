@@ -1,0 +1,3 @@
+-- park_speedlimit - server.lua
+-- Şimdilik server tarafında iş yok.
+-- İleride log, admin komutları vs eklemek istersen buradan devam edebilirsin.
