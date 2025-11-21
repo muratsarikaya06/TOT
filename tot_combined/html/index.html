@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>TOT Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="hub" class="hub hidden">
+    <div class="hub-window">
+        <div class="hub-header">
+            <div class="hub-title">
+                <span class="dot"></span>
+                <span>TÜRK OYUN TİMİ · GTA Online Tarzı Hub</span>
+            </div>
+            <div class="hub-topstats">
+                <div class="pill">LEVEL <span id="stat-level">1</span></div>
+                <div class="pill">XP <span id="stat-xp">0</span></div>
+                <div class="pill">PARA <span id="stat-money">0 ₺</span></div>
+            </div>
+            <button class="btn-close" data-action="close">×</button>
+        </div>
+
+        <div class="hub-body">
+            <aside class="sidebar">
+                <button class="tab-btn active" data-tab="profile">Profil</button>
+                <button class="tab-btn" data-tab="drift">Drift &amp; Race</button>
+                <button class="tab-btn" data-tab="economy">Ekonomi</button>
+                <button class="tab-btn" data-tab="collect">Koleksiyonlar</button>
+                <button class="tab-btn" data-tab="pvp">PvP</button>
+                <button class="tab-btn" data-tab="settings">Ayarlar</button>
+            </aside>
+
+            <main class="tab-content">
+                <section class="tab-panel active" data-tab="profile">
+                    <div class="profile-top">
+                        <div class="avatar-card">
+                            <div class="avatar-img" id="avatar-img"></div>
+                            <div class="avatar-edit">
+                                <input id="avatar-url" placeholder="Avatar URL (Discord / imgur)">
+                                <button id="avatar-save" class="btn-primary">Avatarı Kaydet</button>
+                            </div>
+                            <div class="profile-stats">
+                                <p>Seviye: <span id="p-level">1</span></p>
+                                <p>XP: <span id="p-xp">0</span></p>
+                                <p>Toplam Drift: <span id="p-drift-total">0</span></p>
+                                <p>Toplanan Paketler: <span id="p-collectibles">0</span></p>
+                                <p>PvP K/D: <span id="p-pvp-kd">0 / 0</span></p>
+                            </div>
+                        </div>
+                        <div class="mode-select">
+                            <h2>Oyun Modu Seç</h2>
+                            <div class="mode-cards">
+                                <div class="mode-card active" data-mode="freeroam">
+                                    <h3>Serbest Gezinme</h3>
+                                    <p>Rahat takıl, araba sür, drift yap, şehri gez.</p>
+                                </div>
+                                <div class="mode-card" data-mode="pvp">
+                                    <h3>PvP</h3>
+                                    <p>Tam çatışma modu: tüm silahlar açık.</p>
+                                </div>
+                                <div class="mode-card" data-mode="roleplay">
+                                    <h3>Roleplay</h3>
+                                    <p>Karakterini oyna, kurallı oyun.</p>
+                                </div>
+                            </div>
+                            <button id="mode-confirm" class="btn-primary wide">Seçimi Onayla</button>
+                            <p class="hint">ESC veya kapat butonu ile bu menüyü kapatabilirsin. F10 ile tekrar açılır.</p>
+                            <p class="hint">Aktif mod: <span id="active-mode">-</span></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="tab-panel" data-tab="drift">
+                    <h2>Drift Skorları</h2>
+                    <p>Sunucudaki oyuncuların topladığı drift puanları.</p>
+                    <table class="leaderboard">
+                        <thead>
+                            <tr><th>#</th><th>Oyuncu</th><th>Toplam Drift</th></tr>
+                        </thead>
+                        <tbody id="drift-table">
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="tab-panel" data-tab="economy">
+                    <h2>Ekonomi</h2>
+                    <p>Yakında...</p>
+                </section>
+
+                <section class="tab-panel" data-tab="collect">
+                    <h2>Koleksiyonlar</h2>
+                    <p>Yakında...</p>
+                </section>
+
+                <section class="tab-panel" data-tab="pvp">
+                    <h2>PvP İstatistikleri</h2>
+                    <p>Yakında...</p>
+                </section>
+
+                <section class="tab-panel" data-tab="settings">
+                    <h2>Ayarlar</h2>
+                    <p>Yakında...</p>
+                </section>
+            </main>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
