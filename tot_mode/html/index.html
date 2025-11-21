@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<title>TOT Mod Seçimi</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="backdrop" class="backdrop hidden">
+    <div class="modal">
+        <div class="modal-header">
+            <h1>TOT MOD SEÇİMİ</h1>
+            <span id="closeBtn" class="close-btn">×</span>
+        </div>
+
+        <p class="subtitle">Sunucuda nasıl oynamak istediğini seç. Daha sonra F10 ile değiştirebilirsin.</p>
+
+        <div class="mode-list">
+            <button class="mode-btn" data-mode="freeroam">
+                <div class="mode-title">Serbest Gezinme</div>
+                <div class="mode-desc">Rahat takıl, araba sür, drift yap, şehir keşfet.</div>
+            </button>
+
+            <button class="mode-btn" data-mode="pvp">
+                <div class="mode-title">PvP</div>
+                <div class="mode-desc">Tam çatışma modu: tüm silahlar açık.</div>
+            </button>
+
+            <button class="mode-btn" data-mode="roleplay">
+                <div class="mode-title">Roleplay</div>
+                <div class="mode-desc">Karakterini oyna, kurallı oyun.</div>
+            </button>
+        </div>
+
+        <div class="footer-hint">
+            <span class="dot"></span>
+            <span>F10 ile bu menüyü tekrar açabilirsin.</span>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
